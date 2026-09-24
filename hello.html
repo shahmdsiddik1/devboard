@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DevBoard</title>
+  <style>
+    *{box-sizing:border-box;margin:0}
+    body{
+      font-family:Inter,system-ui,sans-serif;color:#fff;min-height:100vh;
+      background:linear-gradient(135deg,#160b2e,#54258a,#9b5de5);
+      padding:40px;
+    }
+    .app{max-width:1000px;margin:auto}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+    h1{font-size:28px}.tag{opacity:.7;font-size:13px}
+    button{
+      border:0;border-radius:10px;padding:10px 16px;background:#fff;color:#54258a;
+      font-weight:700;cursor:pointer
+    }
+    .stats{display:flex;gap:15px;margin-bottom:25px}
+    .stat,.card{
+      background:#ffffff12;border:1px solid #ffffff20;border-radius:16px;
+      backdrop-filter:blur(10px)
+    }
+    .stat{padding:16px 22px;flex:1}.stat b{display:block;font-size:24px}
+    .board{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{padding:18px;min-height:180px}
+    .card h3{margin-bottom:16px;font-size:15px}
+    .task{
+      background:#fff;color:#241536;padding:12px;margin:9px 0;border-radius:10px;
+      font-size:14px
+    }
+    .task small{display:block;color:#765d88;margin-top:5px}
+    @media(max-width:700px){body{padding:20px}.board{grid-template-columns:1fr}.stats{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div><h1>⚡ DevBoard</h1><span class="tag">Developer task tracker</span></div>
+      <button>+ New Task</button>
+    </header>
+
+    <section class="stats">
+      <div class="stat"><b>12</b>Tasks</div>
+      <div class="stat"><b>5</b>In Progress</div>
+      <div class="stat"><b>7</b>Completed</div>
+    </section>
+
+    <section class="board">
+      <div class="card">
+        <h3>📋 TODO</h3>
+        <div class="task">Build API endpoint<small>Backend · High</small></div>
+        <div class="task">Update README<small>Docs · Low</small></div>
+      </div>
+
+      <div class="card">
+        <h3>🚀 IN PROGRESS</h3>
+        <div class="task">Fix authentication bug<small>Bug · High</small></div>
+        <div class="task">Refactor dashboard<small>Frontend · Medium</small></div>
+      </div>
+
+      <div class="card">
+        <h3>✅ DONE</h3>
+        <div class="task">Setup CI pipeline<small>DevOps</small></div>
+        <div class="task">Create database schema<small>Backend</small></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
